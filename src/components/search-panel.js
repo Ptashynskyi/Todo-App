@@ -1,8 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
+import "./search-panel.css";
 
 const Search = () => {
-  return <input placeholder="search" />;
+  return (
+    <input
+      type="text"
+      className="form-control search-input"
+      placeholder="search"
+    />
+  );
 };
 
 export default Search;
