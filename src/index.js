@@ -6,10 +6,10 @@ import TodoList from "./components/todo-list";
 
 const App = () => {
   const todoData = [
-    { label: "Drink tea", important: false },
-    { label: "Create TodoApp", important: true },
-    { label: "Take a walk", important: false },
-    { label: "Learn Node.js", important: true }
+    { id: 1, label: "Drink tea", important: false },
+    { id: 2, label: "Create TodoApp", important: true },
+    { id: 3, label: "Take a walk", important: false },
+    { id: 4, label: "Learn Node.js", important: true }
   ];
   return (
     <div>

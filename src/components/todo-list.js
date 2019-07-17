@@ -4,9 +4,10 @@ import TodoListItems from "./todo-list-items";
 
 const TodoList = ({ todos }) => {
   const elements = todos.map(item => {
+    const { id, ...itemsParameters } = item;
     return (
-      <li>
-        <TodoListItems {...item} />;
+      <li key={id}>
+        <TodoListItems {...itemsParameters} />;
       </li>
     );
   });
