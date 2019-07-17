@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TodoListItems from "./todo-list-items";
+import TodoListItems from "../todo-list-items/todo-list-items";
 import "./todo-list.css";
 
 const TodoList = ({ todos }) => {
