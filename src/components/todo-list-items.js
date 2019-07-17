@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import TodoList from "./todo-list";
 
-const TodoListItems = () => {
-  return <span>Step</span>;
+const TodoListItems = ({ label, important = false }) => {
+  const styleImportant = {
+    color: important ? "tomato" : "black"
+  };
+  return <span style={styleImportant}>{label}</span>;
 };
 
 export default TodoListItems;
