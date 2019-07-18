@@ -5,7 +5,8 @@ export default class TodoListItems extends Component {
   constructor() {
     super();
     this.state = {
-      done: false
+      done: false,
+      important: false
     };
     this.makeDone = () => {
       this.setState(({ done }) => {
@@ -14,32 +15,35 @@ export default class TodoListItems extends Component {
         };
       });
     };
+    this.MakeImportant = () => {
+      this.setState(({ important }) => {
+        return {
+          important: !important
+        };
+      });
+    };
   }
   render() {
-    const { label, important = false } = this.props;
-    const { done } = this.state;
-    let classNamesState = "todo-list-item";
+    const { label } = this.props;
+    const { done, important } = this.state;
+    let classNamesMark = "todo-list-item";
     if (done) {
-      classNamesState += " done";
+      classNamesMark += " done";
     }
-    const style = {
-      color: important ? "steelblue" : "black",
-      fontWeight: important ? "bold" : "normal"
-    };
+    if (important) {
+      classNamesMark += " important";
+    }
 
     return (
-      <span className={classNamesState}>
-        <span
-          className="todo-list-item-label"
-          style={style}
-          onClick={this.makeDone}
-        >
+      <span className={classNamesMark}>
+        <span className="todo-list-item-label" onClick={this.makeDone}>
           {label}
         </span>
 
         <button
           type="button"
           className="btn btn-outline-success btn-sm float-right"
+          onClick={this.MakeImportant}
         >
           <i className="fa fa-exclamation" />
         </button>
