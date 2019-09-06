@@ -1,14 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import TodoListItems from "../todo-list-items/todo-list-items";
 import "./todo-list.css";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onDeleted }) => {
   const elements = todos.map(item => {
     const { id, ...itemsParameters } = item;
     return (
       <li key={id} className="list-group-item">
-        <TodoListItems {...itemsParameters} />;
+        <TodoListItems {...itemsParameters} onDeleted={() => onDeleted(id)} />;
       </li>
     );
   });
